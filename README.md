@@ -1,15 +1,9 @@
 # real-time-number-plate-recognition-anpr
 
-<p align="center">
-<a href="https://www.youtube.com/watch?v=hQgemv9Z3wg">
-    <img width="100%" src="thumbnail.jpg" alt="Watch the video">
-</a>
-</p>
-
 ## pipeline
 
 <p align="center">
-    <img src="https://github.com/computervisioneng/real-time-number-plate-recognition-anpr/blob/main/pipeline.jpg" alt="Project pipeline">
+    <img src="https://github.com/tlklein/real-time-number-plate-recognition/blob/3e0704fef540c71fdc44e080aa37f7f4d3053169/pipeline.jpg" alt="Project pipeline">
 </p>
 
 ## execution
