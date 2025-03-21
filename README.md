@@ -1,15 +1,14 @@
-# real-time-number-plate-recognition-anpr
+<h1 align="center">Real Time Number Plate Recongition with AWS and Python</h1>
+<p align="center"><img src="https://www.softwebsolutions.com/wp-content/uploads/2023/02/Blog_Automated-number-plate-recognition.jpg" alt="Project pipeline"></p>
+<p align="center">This project implements a real-time Automatic Number Plate Recognition (ANPR) system using AWS services and machine learning. The system consists of a producer that streams video to AWS Kinesis, consumers that perform object detection and tracking, and a visualization component for real-time monitoring.</p>
 
-## pipeline
-
+## Project Pipeline
 <p align="center">
     <img src="https://github.com/tlklein/real-time-number-plate-recognition/blob/3e0704fef540c71fdc44e080aa37f7f4d3053169/pipeline.jpg" alt="Project pipeline">
 </p>
 
-## execution
-
-### setting up producer
-
+## Installation
+### Setting Up The Producer
 - Go to [AWS](https://aws.amazon.com/) and login.
 - Go to Kinesis Video Streams and create a video stream.
 - Go to EC2 and launch a t2.small instance.
@@ -56,8 +55,7 @@
 
       gst-launch-1.0 -v  filesrc location="./sample_30fps_1440.mp4" ! qtdemux name=demux ! queue ! h264parse ! video/x-h264,stream-format=avc,alignment=au ! kvssink name=sink stream-name="stream-name" access-key="access-key" secret-key="secret-key" aws-region="region-name" streaming-type=offline demux. ! queue ! aacparse ! sink.
 
-### setting up consumer #1: object detection and tracking
-
+### Setting Up Consumer #1: Object Detection And Tracking
 - Go to EC2 and launch a t2.xlarge instance with 30GB storage size.
 - SSH into the EC2 instance.
 - Execute the following commands in the EC2 instance:
@@ -104,7 +102,7 @@
       cd ~/amazon-kinesis-video-streams-consumer-library-for-python
       python kvs_consumer_library_example_object_detection_and_tracking.py
 
-### setting up consumer #2: visualization
+### Setting Up Consumer #2: Visualization
 
 - Clone this repository https://github.com/computervisioneng/amazon-kinesis-video-streams-consumer-library-for-python.git
 - Download the files **main_plot.py** and **process_queue.py**.
@@ -116,3 +114,7 @@
 - Execute **process_queue.py**.
 - Execute **main_plot.py**.
 - Execute **amazon-kinesis-video-streams-consumer-library-for-python/kvs_consumer_library_example_object_detection_and_tracking.py**.
+
+## References
+1. REAL TIME Number Plate Recognition with Python and AWS | Object detection and tracking | Yolov8
+    - Link: https://www.youtube.com/watch?v=hQgemv9Z3wg&ab_channel=Computervisionengineer 
